@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="de.suitepad.httpserverapp">
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"></uses-permission>
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <service
+            android:name=".HttpServer"
+            android:enabled="true"
+            android:exported="true" />
+
+        <receiver
+            android:name=".HttpServerReceiver"
+            android:enabled="true"
+            android:exported="true">\
+            <intent-filter>
+                <action android:name="de.suitepad.httpserverapp.HTTP_CONTENT_REQUESTED_ACTION"/>
+                <action android:name="de.suitepad.httpserverapp.CLOSE_HTTP_CONTENT_REQUEST_ACTION"/>
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>

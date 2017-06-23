@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="de.suitepad.datasourceapp">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <service
+            android:name=".DataManagementService"
+            android:exported="true" />
+
+        <receiver
+            android:name=".DataBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="de.suitepad.datasourceapp.DATA_SOURCE_REQUESTED_ACTION" />
+            </intent-filter>
+        </receiver>
+
+        <provider
+            android:name=".SuitePadProvider"
+            android:authorities="de.suitepad.dataprovider"
+            android:label="Data source for suitepad services"
+            android:enabled="true"
+            android:exported="true"></provider>
+    </application>
+
+</manifest>
