@@ -2,7 +2,7 @@
 A simple implementation for the SuitePad task
 <br/>
 
-The Three app are implemeneted as following:<br/>
+The Three apps are implemeneted as following:<br/>
 <br/>App: represents the Presentation component as described in the task
 <br/>DataSourceApp:represents the the Data source Component.(implemented as ContentProvider + Sync Service)
 <br/>HttpServerApp:represents the the HTTP Proxy Server Component.(Implemented as a long Running service)
